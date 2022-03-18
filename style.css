@@ -120,7 +120,7 @@ header {
 
 nav {
     display: flex;
-    padding: 0 5%;
+    padding: 0 55%;
     justify-content: space-between;
     align-items: center;
     height: 100px;
@@ -306,6 +306,8 @@ main .page {
 .services h4 {
     display: inline-block;
     font-size: 1.5rem;
+    margin-left: 70px;
+    margin-top: 50px;
     color: #fff;
 }
 
@@ -476,7 +478,7 @@ main .page {
     font-size: 1.2rem;
 }
 /* Page 5 */
-#page-5{
+/* #page-5{
     background-image:url("images/ps.png");
     background-repeat: none;
     background-size: cover;
@@ -488,7 +490,7 @@ main .page {
     color:#06B3A7;
     font-weight: bolder;
     font-size:40px;
-}
+} */
 /* Footer */
 
 footer {
