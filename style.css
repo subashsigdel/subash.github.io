@@ -478,19 +478,11 @@ main .page {
     font-size: 1.2rem;
 }
 /* Page 5 */
-/* #page-5{
-    background-image:url("images/ps.png");
-    background-repeat: none;
-    background-size: cover;
+#page-5{
+    padding-top: 350px;
     text-align: center;
 }
-#page-5 p{
-    margin-top: 343px;
-    background-color: whitesmoke;
-    color:#06B3A7;
-    font-weight: bolder;
-    font-size:40px;
-} */
+
 /* Footer */
 
 footer {

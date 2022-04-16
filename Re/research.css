@@ -1,0 +1,38 @@
+
+#heading{
+    text-align: center;
+    font-size: 60px;
+}
+.topics{
+    text-align: center;
+    font-size: 40px;
+    color: black;
+    font-weight:bolder;
+    padding: 30px;
+
+}
+.paragraph{
+    font-size: 22px;
+    font-family:'Times New Roman', Times, serif;
+    padding: 20px;
+    font-style:italic;
+}
+.center{
+    text-align: center;
+    font-size: 25px;
+    font-weight: bold;
+}
+.images{
+    width: 40%;
+    height:1%;
+    margin-left: 400px;
+    background-size: cover;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.pdf{
+    float: right;
+    margin-top: -80px;
+    font-size: 25px;
+    color: black;
+}
