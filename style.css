@@ -229,7 +229,8 @@ main .page {
 
 .container > h3 {
     display: table;
-    width: fit-content;
+    width:  fit-content;
+    width: -moz-fit-content;
     margin-bottom: 5rem;
     border-bottom: var(--secondaryTextColor) 1px solid;
     text-transform: uppercase;
@@ -487,9 +488,6 @@ main .page {
 /* page 6 */
 
 #page-6{
-    background-image: url('/images/workonprogress.jpeg');
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 /* Footer */
