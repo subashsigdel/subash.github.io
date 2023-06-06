@@ -276,7 +276,11 @@ main .page {
     flex-basis: 60%;
     color: #ddd;
 }
-
+.aboutMe p {
+    color: #fff;
+    font-size:1rem;
+    font-style: italic;
+}
 /* Page 2 */
 
 #page-2 .services {
@@ -487,9 +491,18 @@ main .page {
 
 /* page 6 */
 
-#page-6{
+.grid-container{
+    display:grid;
+    grid-template-columns: auto auto;
+    column-gap: 5%;
 }
+.experience{
+    font-size: 0.9rem;
+}
+.exphead{
+    font-size: 1rem;
 
+}
 /* Footer */
 
 footer {
