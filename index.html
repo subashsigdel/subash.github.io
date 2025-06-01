@@ -3,471 +3,170 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta name="google-adsense-account" content="ca-pub-1420024211484517">
-
-        <link rel="stylesheet" href="style.css" />
-        <link rel="stylesheet" href="folio.css" />
-        <link rel="stylesheet" href="home1.css" />
-        <link rel="stylesheet" href="Achivements.css" />
-        <link rel="icon" href="/images/subash2.jpg" />
-        <title>Subash sigdel</title>
-    </head>
-    <body>
-        <header>
-            <nav>
-                <div class="loader"><p>5uba5h</p></div>
-                <ul class="hideNavbar">
-                    <li class="nav-links"><a href="/Re/research.html">Papers</a></li>
-                    <li class="nav-links"><a href="#page-2">Skills</a></li>
-                    <li class="nav-links"><a href="#page-6">Experience</a></li>
-                    <li class="nav-links"><a href="#page-3">Projects</a></li>
-                    <li class="nav-links"><a href="#page-5">More</a></li>
-                    <li class="nav-links"><a href="#page-4">Contact</a></li>
-                </ul>
-                <!-- <button>
-                    <i class="fas fa-bars"></i>
-                </button> -->
-            </nav>
-            <section id="Home" class="home-content">
-                <div class="text-fluid">
-                    <div class="text-boxing">
-                      <div class="text-centered-fluid">
-                        <a><h3>Hi there!</h3>
-                          <h1>I'm <span class="coloredText">subash</span></h1>
-                          <h3>A Tech Enthusiast</h3></a>
-                      </div>
-                    </div>
-                </div>
-                <figure>
-                    <img src="images/comp.png" />
-                </figure>
-                <div class="scroll">
-                    <i class="fas fa-arrow-down"></i>
-                </div>
-            </section>
-            <div class="cover hidenCover"></div>
-            <div class="cover hidenCover"></div>
-            <div class="section-w7-container">
-                <div class="w4-triangle">
-                  <div class="w5-triangle">
-                  </div>
-                </div>
-            
-                <div class="w7-triangle">
-                  <div class="w8-triangle">
-                    <div class="w9-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="w10-triangle">
-                  <div class="w11-triangle">
-                    <div class="w12-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="w13-triangle">
-                  <div class="w14-triangle">
-                    <div class="w15-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-        </header>
-        <div class="area">
-            <ul class="circles">
-                <li>AI</li>
-                <li>IOT</li>
-                <li>AI</li>
-                <li>AI</li>
-                <li>AR</li>
-                <li>VR</li>
-                <li>ML</li>
-                <li>DL</li>
-                <li>AI</li>
-                <li>IOT</li>
-                <li>faive</li>
-            </ul>
+        <title>subash sigdel</title>
+      
+        <!-- Tailwind CSS -->
+        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+        
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+        
+        <!-- Feather Icons -->
+        <script src="https://unpkg.com/feather-icons"></script>
+      
+        <!-- Your custom CSS -->
+        <link rel="stylesheet" href="project.css">
+      
+        <!-- Swiper JS (must be before Swiper init script) -->
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+      
+        <!-- Hamburger Menu Toggle -->
+        <script defer>
+          document.addEventListener('DOMContentLoaded', () => {
+            const menuButton = document.getElementById('menu-button');
+            const menu = document.getElementById('mobile-menu');
+            menuButton.addEventListener('click', () => {
+              menu.classList.toggle('hidden');
+            });
+          });
+        </script>
+      </head>
+      
+<body class="bg-white text-gray-900 font-sans">
+  <!-- Navbar -->
+  <nav class="bg-gray-800 text-white p-4 shadow sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+      <div class="flex items-center space-x-6">
+        <div class="hidden md:flex space-x-4 text-sm items-center">
+          <a href="https://github.com/subashsigdel" class="hover:text-gray-300 flex items-center space-x-1">
+            <i data-feather="github"class="w-4 h-4"></i><span>GitHub</span>
+          </a>
+          <a href="https://www.linkedin.com/in/subash5/" class="hover:text-gray-300 flex items-center space-x-1">
+            <i data-feather="linkedin" class="w-4 h-4"></i><span>LinkedIn</span>
+          </a>
+          <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+            <i data-feather="book-open" class="w-4 h-4"></i><span>Google Scholar</span>
+          </a>
         </div>
-        <main>
-            <section id="page-1" class="page">
-                <div class="container">
-                    <h3>About me</h3>
-                    <div class="aboutMe">
-                        <figure>
-                            <img src="images/subash2.jpg" />
-                        </figure>
-                        <article>
-                            <h4>
-                                Creative Independent
-                                <span class="coloredText">Developer</span>
-                            </h4>
-                            <p>
-                                "  I am a developer with a deep passion for researching and exploring 
-                                the realms of Artificial intelligence. I am particularly drawn to the 
-                                captivating fields of Reinforcement Learning and Computer Vision. Equipped
-                                 with a blend of technical expertise and an unwavering commitment to 
-                                  research, I strive to unlock new frontiers in reinforcement learning
-                                   and computer vision, shaping the future of AI applications "
-                                
-                            </p>
-                            <a
-                                href="images/newcv0.pdf"
-                                class="btn downloadCV"
-                                download="yourcv.pdf"
-                            >
-                                <span>Download CV</span></a
-                            >
-                        </article>
-                    </div>
-                </div>
-            </section>
-            <section id="page-2" class="page">
-                <div class="container">
-                    <h3>Skills</h3>
-                    <ul class="services">
-                        <li>
-                            <div>
-                                <i class="fas fa-palette"></i>
-                                <h4>Python</h4>
-                                <p>
-                                    <!-- Pandas ||Numpy|| Matplotlib|| Tkinter -->
-                                    <!-- <div class="line">
-                                        <div class="skills python"></div>
-                                    </div> -->
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fas fa-arrows-alt"></i>
-                                <h4>AI || Ml || DL</h4>
-                                <p>
-                                    <!-- OpenCV || NLP || Tensorflow || Keras || KNN || RCNN -->
-                                    <!-- <div class="line">
-                                        <div class="skills Ai"></div>
-                                    </div> -->
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fas fa-laptop-code"></i>
-                                <h4>HTML || CSS</h4>
-                                <p>
-                                    <!-- HTML || CSS || JS  -->
-                                    <!-- <div class="line">
-                                        <div class="skills Html"></div>
-                                      </div> -->
-                                </p>
-                            </div>
-                        </li>
+      </div>
+      <div class="md:hidden">
+        <button id="menu-button" class="focus:outline-none">
+          <i data-feather="menu"></i>
+        </button>
+      </div>
+      <div class="hidden md:flex space-x-6">
+        <a href="#projects" class="hover:text-gray-300">Projects</a>
+        <a href="#experience" class="hover:text-gray-300">Experience</a>
+        <a href="#papers" class="hover:text-gray-300">Papers</a>
+      </div>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2">
+      <a href="#projects" class="block text-sm hover:text-gray-300">Projects</a>
+      <a href="#experience" class="block text-sm hover:text-gray-300">Experience</a>
+      <a href="#papers" class="block text-sm hover:text-gray-300">Papers</a>
+      <div class="flex flex-col space-y-2 pt-2 border-t border-gray-700">
+        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+          <i data-feather="github"></i><span>GitHub</span>
+        </a>
+        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+          <i data-feather="linkedin"></i><span>LinkedIn</span>
+        </a>
+        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
+          <i data-feather="book-open"></i><span>Google Scholar</span>
+        </a>
+      </div>
+    </div>
+  </nav>
 
-                        <li>
-                            <div>
-                                <i class="fas fa-rocket"></i>
-                                <h4>C</h4>
-                                <p>
-                                    <!-- Array || Function || String -->
-                                    <!-- <div class="line">
-                                        <div class="skills c"></div>
-                                    </div> -->
- 
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fas fa-rocket"></i>
-                                <h4>SQL</h4>
-                                <p>
-                                    <!-- || Good understanding || -->
-                                    <!-- <div class="line">
-                                        <div class="skills sql"></div>
-                                    </div> -->
-                                </p>
-                            </div>
-                        </li>
-                        <li>
-                            <div>
-                                <i class="fas fa-rocket"></i>
-                                <h4>React Js</h4>
-                                <p>
-                                    <!-- || Learning || -->
-                                    <!-- <div class="line">
-                                        <div class="skills flutter"></div>
-                                      </div> -->
-                                </p>
-                            </div>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section id="Home" class="home-content">
-                <div class="text-fluid">
-                    <div class="text-boxing">
-                      <div class="text-centered-fluid">
-                        <a><h3>Hi there!</h3>
-                          <h1>I'm <span class="coloredText">subash</span></h1>
-                          <h3>A Tech Enthusiast</h3></a>
-                      </div>
-                    </div>
-                </div>
-                <figure>
-                    <img src="images/comp.png" />
-                </figure>
-                <div class="scroll">
-                    <i class="fas fa-arrow-down"></i>
-                </div>
-            </section>
-            <div class="cover hidenCover"></div>
-            <div class="cover hidenCover"></div>
-            <div class="section-w7-container">
-                <div class="w4-triangle">
-                  <div class="w5-triangle">
-                  </div>
-                </div>
-            
-                <div class="w7-triangle">
-                  <div class="w8-triangle">
-                    <div class="w9-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="w10-triangle">
-                  <div class="w11-triangle">
-                    <div class="w12-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-            
-                <div class="w13-triangle">
-                  <div class="w14-triangle">
-                    <div class="w15-triangle">
-            
-                    </div>
-                  </div>
-                </div>
-        </header>
-        <div class="area">
-            <ul class="circles">
-                <li>AI</li>
-                <li>IOT</li>
-                <li>AI</li>
-                <li>AI</li>
-                <li>AR</li>
-                <li>VR</li>
-                <li>ML</li>
-                <li>DL</li>
-                <li>AI</li>
-                <li>IOT</li>
-                <li>faive</li>
-            </ul>
+  <!-- Hero / About -->
+  <section class="min-h-screen flex flex-col justify-center items-center text-center p-4">
+    <h1 class="text-2xl font-bold mb-2">subash sigdel</h1>
+    <p class="text-lg text-gray-600 mb-4">Research Enthusiast & Developer</p>
+    <img src="images/subash.jpeg" alt="Your photo" class="rounded-full w-48 h-48 object-cover mb-5" />
+    <p class="max-w-xl text-gray-700 mb-6">
+        I am a developer with a deep passion for researching and exploring the realms of Artificial intelligence. I am particularly drawn to the captivating fields of Reinforcement Learning and Computer Vision. Equipped with a blend of technical expertise and an unwavering commitment to research, I strive to unlock new frontiers in reinforcement learning and computer vision, shaping the future of AI applications
+    </p>
+    <a href="#projects" class="text-blue-600 hover:underline mb-6">View My Work ↓</a>
+  </section>
+
+  <!-- Experience -->
+  <section id="experience" class="bg-gray-50 py-10 p-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Experience</h2>
+      <div class="space-y-4">
+        <div class="border border-gray-200 p-4 rounded-lg shadow-sm">
+          <h3 class="font-semibold">AI Engineer Intern @ Telemus AI</h3>
+          <p class="text-sm text-gray-600">jan 2023 – Apr 2023</p>
+          <ul class="list-disc list-inside text-gray-700">
+            <li>Crowd estimation and analytics , Soccer analytics using 
+              perception transformation </li>
+            <li>Worked on NLP ( Conversational bot for virtual conversation practice )</li>
+            <li>Worked with Deep Q learning (Reinforcement Learning)</li>
+          </ul>
         </div>
-        <main>
-            <section id="page-6" class="page">
-                <div class="container">
-                    <h3>Experience</h3>
-                    <div class="grid-container">
-                        <div class="experience">
-                            <h3>Research & Development Internship (may2022 - Nov2022)</h3>
-                            <li>Researched on MTCNN & siamese network and made real time face attendence system</li>
-                            <li>Researched on NLP chatbot system </li>
-                            <li>Worked on MissionOxygenTeam, Yantra and BEMS Websites (React js)</li>
-                            <li>Volunteered workshop about robotics and AI at schools</li>
-                            <li>Volunteered UNDP program, CNIYEF event and more</li>
-                            <a
-                            href="experience/internship.html"
-                            class="btn downloadCV"
-                        >
-                            <span>-> Internship Completion Letter &#8592</span></a
-                        >
-                        </div>
-                        <div class="experience">
-                            <h3>Artificial Intelligence Engineer Intern (jan20223 - April20223)</h3>
-                            <li>Crowd Estimation and Analytics</li>
-                            <li>Soccer Analytics Using Perception Transformation</li>
-                            <li>NLP ( Conversational bot for virtual conversation practice )</li>
-                            <li>Reinforcement Learning (Deep Q Learning Algorithm)</li>
-                            <a
-                            href="experience/telemusintern.html"
-                            class="btn downloadCV"
-                        >
-                            <span>Internship Completion Letter &#8592</span></a
-                        >
-                        </div>
-                    </div>
+        <div class="border border-gray-200 p-4 rounded-lg shadow-sm">
+            <h3 class="font-semibold">Research and Development Intern @ Robotics Association Of Nepal</h3>
+            <p class="text-sm text-gray-600">May 2022 – Nov 2022</p>
+            <ul class="list-disc list-inside text-gray-700">
+              <li>Researched on MTCNN & Siamese Neural Network</li>
+              <li>Volunteered workshop about robotics and AI at schools</li>
+              <li> Volunteered UNDP program, CNIYEF event and more</li>
+            </ul>
+          </div>
+      </div>
+    </div>
+  </section>
 
-                </div>
-            </section>
-            <section id="page-3" class="page">
-                <div class="container">
-                    <h3>Projects</h3>
-                    <ul>
-                        <li class="project">
-                            <figure class="project_Image">
-                                <video width="320" height="240" autoplay muted loop>
-                                    <source src="images/emotion.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                  </video>
-                                <div class="project-links">
-                                    <a href="https://github.com/subash-5/FacialEmotionDetection">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>Face expression detection</h4>
-                        </li>
-                        <li class="project">
-                            <figure class="project_Image">
-                                <video width="320" height="240" autoplay muted loop>
-                                    <source src="images/face mask detection.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                </video>
-                                <div class="project-links">
-                                    <a href="https://github.com/subash-5/flask">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>Mask Detection Webapp</h4>
-                        </li>
-                        <li class="project">
-                            <figure class="project_Image">
-                                <video width="320" height="240" autoplay muted loop >
-                                    <source src="images/KEYBOARD.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                </video>
-                                <div class="project-links">
-                                    <a href="https://github.com/subash-5/virtual-keyboard">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>Virtual keyboard</h4>
-                        </li>
-                        <li class="project">
-                            <figure class="project_Image">
-                                <video width="320" height="240" autoplay muted loop>
-                                    <source src="images/pixellib.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                </video>
-                                <div class="project-links">
-                                    <a href="https://github.com/subash-5/meachine_learning/tree/main/segmentation">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>Image Segmentation</h4>
-                        </li>
-
-                        <li class="project">
-                            <figure class="project_Image">
-                                <video width="320" height="240" autoplay muted loop>
-                                    <source src="images/ledController.mp4" type="video/mp4">
-                                  Your browser does not support the video tag.
-                                </video>
-                                <div class="project-links">
-                                    <a href="https://github.com/subash-5/LedControlling-arduino-Opencv">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>ledController using hand</h4>
-                        </li>
-                        <li class="project">
-                            <figure class="project_Image">
-                                <img
-                                    src="images/protfolio.png"
-                                />
-                                <div class="project-links">
-                                    <a href="https://www.subashsigdel.com.np">source code<i class="fas fa-link"></i></a>
-                                </div>
-                            </figure>
-                            <h4>Protfolio Website</h4>
-                        </li>
-                    </ul>
-                </div>
-            </section>
-            <section id="page-5" class="page">
-                <a
-                href="Re/research.html"
-                class="btn downloadCV center"
-            >
-                <span>ResearchPapers</span></a
-            ><br>
-             
-            </section>
-            <section id="page-4" class="page">
-                <div class="container">
-                    <h3>Contact Me</h3>
-                    <div class="contact">
-                        <form action="https://formsubmit.co/hi@subashsigdel.com.np" method="POST">
-                            <h4>Message Me</h4>
-                            <div class="row">
-                                <input
-                                    type="text"
-                                    name="name"
-                                    placeholder="Enter your name"
-                                />
-                                <input
-                                    type="email"
-                                    name="email"
-                                    placeholder="Enter your email"
-                                />
-                            </div>
-                            <div class="row">
-                                <input
-                                    type="text"
-                                    name="subject"
-                                    placeholder="Enter subject"
-                                />
-                            </div>
-                            <div class="row">
-                                <textarea
-                                    name="message"
-                                    placeholder="Enter your message"
-                                    cols="30"
-                                    rows="10"
-                                ></textarea>
-                            </div>
-                            <div class="row">
-                                <button type="submit" class="btn">
-                                    Submit
-                                </button>
-                            </div>
-                        </form>
-                        <div>
-                            <h4>Contact info</h4>
-                            <ul class="contactInfo">
-                                <li>
-                                    <i class="fas fa-phone-square-alt"></i
-                                    ><span>+977-mobile mode:Silent</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-envelope"></i
-                                    ><span>hi@subashsigdel.com.np</span>
-                                </li>
-                                <li>
-                                    <i class="fas fa-map-marker-alt"></i>
-                                    <span>Kathmandu,Nepal</span>
-                                </li>
-                                <li>
-                                    <div class="social-medias">
-                                        <a href="https://twitter.com/subash5_5"><img src="images/twitter.png"><i class="fab fa-twitter"></i></a>
-                                        <a href="https://www.linkedin.com/in/subash5"><img src="images/link.png"><i class="fab fa-linkedin-in"></i></a>
-                                        <a href="https://github.com/subashsigdel"><img src="images/git.png"><i class="fab fa-github"></i></a>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <footer>
-                <div class="copyright">
-                    <p>&copy; 5uba5h<br>
-                <div class="copyright1">Made By Subash Sigdel</div></p>
-                </div>
-                
-            </footer>
-        </main>
-
-    </body>
-</html>           
+  <!-- Research Papers -->
+  <section id="papers" class="py-10 p-6">
+    <div class="max-w-4xl mx-auto">
+      <h2 class="text-2xl font-semibold mb-6">Research Papers</h2>
+      <ul class="list-disc list-inside space-y-4">
+        <li>
+          <strong>Classification Techniques in Machine Learning</strong>, Article, 2022
+          <br />
+          <a href="#" class="text-blue-600 hover:underline">Read Paper</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+  <!-- Footer -->
+  <footer id="contact" class="text-center text-sm text-gray-500 py-6">
+    <p>&copy; Made by subash sigdel</p>
+    <div class="space-x-4 mt-2">
+      <a href="https://github.com/subashsigdel" class="hover:text-gray-700">GitHub</a>
+      <a href="https://www.linkedin.com/in/subash5/" class="hover:text-gray-700">LinkedIn</a>
+      <a href="#" class="hover:text-gray-700">Google Scholar</a>
+    </div>
+  </footer>
+  <script>feather.replace()</script>
+  <!--JAVASCRIPT CODE-->
+<script>
+    var swiper = new Swiper(".centered-slide-carousel", {
+     centeredSlides: true,
+     paginationClickable: true,
+     loop: true,
+     spaceBetween: 30,
+     slideToClickedSlide: true,
+     pagination: {
+       el: ".centered-slide-carousel .swiper-pagination",
+       clickable: true,
+     },
+     breakpoints: {
+       1920: {
+         slidesPerView: 4,
+         spaceBetween: 30
+       },
+       1028: {
+         slidesPerView: 2,
+         spaceBetween: 10
+       },
+       990: {
+         slidesPerView: 1,
+         spaceBetween: 0
+       }
+     }
+    });
+    </script>
+</body>
+</html>
