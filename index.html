@@ -1,355 +1,760 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>subash sigdel</title>
-      
-        <!-- Tailwind CSS -->
-        <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-        
-        <!-- Swiper CSS -->
-        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
-        
-        <!-- Feather Icons -->
-        <script src="https://unpkg.com/feather-icons"></script>
-      
-        <!-- Your custom CSS -->
-        <link rel="stylesheet" href="project.css">
-      
-        <!-- Swiper JS (must be before Swiper init script) -->
-        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
-      
-        <!-- Hamburger Menu Toggle -->
-        <script defer>
-          document.addEventListener('DOMContentLoaded', () => {
-            const menuButton = document.getElementById('menu-button');
-            const menu = document.getElementById('mobile-menu');
-            menuButton.addEventListener('click', () => {
-              menu.classList.toggle('hidden');
-            });
-          });
-        </script>
-      </head>
-      
-<body class="bg-white text-gray-900 font-sans">
-  <!-- Navbar -->
-  <nav class="bg-gray-800 text-white p-4 shadow sticky top-0 z-50">
-    <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
-      <div class="flex items-center space-x-6">
-        <div class="hidden md:flex space-x-4 text-sm items-center">
-          <a href="https://github.com/subashsigdel" class="hover:text-gray-300 flex items-center space-x-1">
-            <i data-feather="github"class="w-4 h-4"></i><span>GitHub</span>
-          </a>
-          <a href="https://www.linkedin.com/in/subash5/" class="hover:text-gray-300 flex items-center space-x-1">
-            <i data-feather="linkedin" class="w-4 h-4"></i><span>LinkedIn</span>
-          </a>
-          <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-            <i data-feather="book-open" class="w-4 h-4"></i><span>Google Scholar</span>
-          </a>
-        </div>
-      </div>
-      <div class="md:hidden">
-        <button id="menu-button" class="focus:outline-none">
-          <i data-feather="menu"></i>
-        </button>
-      </div>
-      <div class="hidden md:flex space-x-6">
-        <a href="#projects" class="hover:text-gray-300">Projects</a>
-        <a href="#experience" class="hover:text-gray-300">Experience</a>
-        <a href="#papers" class="hover:text-gray-300">Papers</a>
-      </div>
-    </div>
-    <div id="mobile-menu" class="md:hidden hidden mt-4 space-y-2">
-      <a href="#projects" class="block text-sm hover:text-gray-300">Projects</a>
-      <a href="#experience" class="block text-sm hover:text-gray-300">Experience</a>
-      <a href="#papers" class="block text-sm hover:text-gray-300">Papers</a>
-      <div class="flex flex-col space-y-2 pt-2 border-t border-gray-700">
-        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-          <i data-feather="github"></i><span>GitHub</span>
-        </a>
-        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-          <i data-feather="linkedin"></i><span>LinkedIn</span>
-        </a>
-        <a href="#" class="hover:text-gray-300 flex items-center space-x-1">
-          <i data-feather="book-open"></i><span>Google Scholar</span>
-        </a>
-      </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Subash Sigdel</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@300;400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --ink: #0f0f0f;
+      --muted: #444;
+      --faint: #e4e0da;
+      --paper: #f9f7f4;
+      --white: #ffffff;
+      --accent: #b85c3a;
+      --link: #1a4a7a;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--paper);
+      color: var(--ink);
+      font-family: 'Source Sans 3', sans-serif;
+      font-size: 17px;
+      line-height: 1.7;
+    }
+
+    /* ── Scrollbar ── */
+    ::-webkit-scrollbar { width: 5px; }
+    ::-webkit-scrollbar-track { background: var(--paper); }
+    ::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 999px; }
+    ::-webkit-scrollbar-thumb:hover { background: #ccc; }
+
+    /* ── Nav ── */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: var(--paper);
+      border-bottom: 1px solid var(--faint);
+      padding: 1rem 0;
+    }
+
+    nav .wrap {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav .name {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.75rem;
+      font-weight: 400;
+      letter-spacing: 0.07em;
+      color: var(--muted);
+    }
+
+    nav ul {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+    }
+
+    nav ul a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    nav ul a:hover { color: var(--ink); }
+
+    .wrap {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
+
+    /* ── Hero ── */
+    #about {
+      padding: 6rem 0 5rem;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .hero-inner {
+      display: flex;
+      align-items: flex-start;
+      gap: 3.5rem;
+      animation: fadeUp 0.5s ease both;
+    }
+
+    .hero-photo {
+      flex-shrink: 0;
+      width: 245px;
+      height: 250px;
+      border-radius: 50%;
+      border: 4px solid var(--faint);
+      overflow: hidden;
+      background: var(--faint);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
+    }
+
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-text h1 {
+      font-family: 'Lora', Georgia, serif;
+      font-size: 2.4rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+
+    .hero-text .tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      color: var(--muted);
+      font-size: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-text .bio {
+      color: #222;
+      font-size: 0.98rem;
+      max-width: 520px;
+      margin-bottom: 2rem;
+      font-weight: 300;
+      line-height: 1.75;
+    }
+
+    .social-row {
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .social-row a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.7rem;
+      letter-spacing: 0.04em;
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+
+    .social-row a:hover { border-bottom-color: var(--link); }
+
+    /* ── Sections ── */
+    section {
+      padding: 4rem 0;
+      border-bottom: 1px solid var(--faint);
+    }
+
+    .section-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 2.5rem;
+    }
+
+    /* ── Papers ── */
+    .paper { margin-bottom: 2.5rem; }
+
+    .paper-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      line-height: 1.5;
+      margin-bottom: 0.3rem;
+      color: var(--ink);
+    }
+
+    .paper-authors {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin-bottom: 0.2rem;
+      font-style: italic;
+      font-weight: 300;
+    }
+
+    .paper-authors .me {
+      font-style: normal;
+      font-weight: 500;
+      color: #1a1a1a;
+    }
+
+    .paper-venue {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      letter-spacing: 0.04em;
+      color: var(--accent);
+      margin-bottom: 0.6rem;
+    }
+
+    .paper-links { display: flex; gap: 1.2rem; }
+
+    .paper-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      border-bottom: 1px solid var(--faint);
+      transition: border-color 0.2s;
+    }
+
+    .paper-links a:hover { border-bottom-color: var(--link); }
+
+    /* ── Experience ── */
+    .exp-item {
+      display: grid;
+      grid-template-columns: 130px 1fr;
+      gap: 0 2.5rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .exp-date {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.68rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+      padding-top: 0.25rem;
+      line-height: 1.6;
+    }
+
+    .exp-role {
+      font-family: 'Lora', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 0.1rem;
+      color: var(--ink);
+    }
+
+    .exp-org {
+      font-size: 0.88rem;
+      color: var(--muted);
+      font-style: italic;
+      margin-bottom: 0.6rem;
+    }
+
+    .exp-bullets { list-style: none; padding: 0; }
+
+    .exp-bullets li {
+      font-size: 0.9rem;
+      color: #222;
+      padding-left: 1.2rem;
+      position: relative;
+      margin-bottom: 0.2rem;
+      font-weight: 300;
+    }
+
+    .exp-bullets li::before {
+      content: "–";
+      position: absolute;
+      left: 0;
+      color: #aaa;
+    }
+
+    /* ── Projects ── */
+    .project-group-label {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.63rem;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+      margin-top: 2.8rem;
+    }
+
+    .project-group-label:first-of-type { margin-top: 0; }
+
+    .project-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.1rem;
+    }
+
+    .project-card {
+      background: var(--white);
+      border: 1px solid var(--faint);
+      border-radius: 5px;
+      display: flex;
+      flex-direction: row;
+      overflow: hidden;
+      transition: border-color 0.2s, box-shadow 0.2s;
+      min-height: 168px;
+    }
+
+    .project-card:hover {
+      border-color: #c4c0ba;
+      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
+    }
+
+    .project-card-img {
+      width: 200px;
+      flex-shrink: 0;
+      overflow: hidden;
+      background: #ede9e3;
+      position: relative;
+    }
+
+    .project-card-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.4s ease;
+    }
+
+    .project-card:hover .project-card-img img {
+      transform: scale(1.04);
+    }
+
+    .project-card-img.placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: repeating-linear-gradient(
+        45deg,
+        #ede9e3,
+        #ede9e3 6px,
+        #e6e1db 6px,
+        #e6e1db 12px
+      );
+    }
+
+    .project-card-img.placeholder span {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      color: #b0a898;
+      letter-spacing: 0.05em;
+      background: var(--white);
+      padding: 0.2rem 0.5rem;
+      border-radius: 2px;
+    }
+
+    .project-card-body {
+      padding: 1.4rem 1.7rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.45rem;
+      flex: 1;
+    }
+
+    .project-card-title {
+      font-family: 'Lora', serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      color: var(--ink);
+      line-height: 1.35;
+    }
+
+    .tag {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.04em;
+      padding: 0.15rem 0.5rem;
+      border-radius: 2px;
+      background: var(--faint);
+      color: var(--muted);
+      display: inline-block;
+      width: fit-content;
+    }
+
+    .tag.winner { background: #f5ede4; color: #7a4a1a; }
+    .tag.ongoing { background: #e8f0e8; color: #3a6a3a; }
+
+    .project-card-desc {
+      font-size: 0.87rem;
+      color: #222;
+      font-weight: 300;
+      line-height: 1.65;
+      flex: 1;
+    }
+
+    .project-card-team {
+      font-size: 0.79rem;
+      color: var(--muted);
+      font-style: italic;
+    }
+
+    .project-card-tech {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.61rem;
+      color: var(--muted);
+      letter-spacing: 0.03em;
+    }
+
+    .project-card-links {
+      display: flex;
+      gap: 1rem;
+      padding-top: 0.5rem;
+      border-top: 1px solid var(--faint);
+      margin-top: 0.15rem;
+    }
+
+    .project-card-links a {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.65rem;
+      color: var(--link);
+      text-decoration: none;
+      letter-spacing: 0.03em;
+      transition: opacity 0.2s;
+    }
+
+    .project-card-links a:hover { opacity: 0.65; }
+
+    /* ── Footer ── */
+    footer {
+      padding: 2.5rem 0;
+      text-align: center;
+    }
+
+    footer p {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.66rem;
+      color: var(--muted);
+      letter-spacing: 0.06em;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(10px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    @media (max-width: 620px) {
+      .hero-inner { flex-direction: column; gap: 1.8rem; }
+      .hero-text h1 { font-size: 1.9rem; }
+      .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      nav ul { gap: 1.2rem; }
+      .project-card { flex-direction: column; }
+      .project-card-img { width: 100%; height: 160px; }
+    }
+
+    /* ── InMoov Gallery ── */
+    .inmoov-gallery { position: relative; }
+
+    .inmoov-gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: opacity 0.3s ease;
+    }
+
+    .inmoov-gallery img.fade { opacity: 0; }
+
+    .gallery-controls {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.4rem 0.6rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.45));
+    }
+
+    .gallery-btn {
+      background: rgba(255,255,255,0.18);
+      border: 1px solid rgba(255,255,255,0.35);
+      color: #fff;
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      cursor: pointer;
+      font-size: 0.75rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.2s;
+      line-height: 1;
+    }
+
+    .gallery-btn:hover { background: rgba(255,255,255,0.32); }
+
+    .gallery-counter {
+      font-family: 'IBM Plex Mono', monospace;
+      font-size: 0.6rem;
+      color: rgba(255,255,255,0.85);
+      letter-spacing: 0.05em;
+    }
+
+    .project-card-mentor {
+      font-size: 0.82rem;
+      color: #2e2e2e;
+      font-style: italic;
+      font-weight: 300;
+      border-left: 2px solid var(--faint);
+      padding-left: 0.7rem;
+    }
+
+    .project-card-mentor a {
+      color: var(--link);
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s;
+    }
+
+    .project-card-mentor a:hover { border-bottom-color: var(--link); }
+  </style>
+</head>
+<body>
+
+  <!-- Nav -->
+  <nav>
+    <div class="wrap">
+      <a href="#" class="name" style="text-decoration:none;">subash sigdel</a>
+      <ul>
+        <li><a href="#papers">papers</a></li>
+        <li><a href="#experience">experience</a></li>
+        <li><a href="#projects">projects</a></li>
+      </ul>
     </div>
   </nav>
 
-  <!-- Hero / About -->
-  <section class="min-h-screen flex flex-col justify-center items-center text-center p-4">
-    <h1 class="text-2xl font-bold mb-2">subash sigdel</h1>
-    <p class="text-lg text-gray-600 mb-4">Research Enthusiast & Developer</p>
-    <img src="images/subash.jpeg" alt="Your photo" class="rounded-full w-48 h-48 object-cover mb-5" />
-    <p class="max-w-xl text-gray-700 mb-6">
-        I am a developer with a deep passion for researching and exploring the realms of Artificial intelligence. I am particularly drawn to the captivating fields of Reinforcement Learning and Computer Vision. Equipped with a blend of technical expertise and an unwavering commitment to research, I strive to unlock new frontiers in reinforcement learning and computer vision, shaping the future of AI applications
-    </p>
-    <a href="#projects" class="text-blue-600 hover:underline mb-6">View My Work ↓</a>
+  <!-- Hero -->
+  <section id="about">
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="hero-photo">
+          <img src="images/subash.jpeg" alt="Subash Sigdel" />
+        </div>
+        <div class="hero-text">
+          <h1>Subash Sigdel</h1>
+          <p class="tagline">Researcher &amp; Developer · Reinforcement Learning · Computer Vision</p>
+          <p class="bio">
+            I work at the intersection of perception and decision making — building systems that see and act. My long-term research interest is
+            <strong>spatial intelligence</strong>: how machines understand, reason about,
+            and interact with physical space. Currently I am exploring how Vision Language Models can be grounded
+            in physical action, enabling machines to semantically understand their environment and respond to natural language with
+            physical gestures.
+          </p>
+          <div class="social-row">
+            <a href="https://github.com/subashsigdel" target="_blank">↗ GitHub</a>
+            <a href="https://www.linkedin.com/in/subash5/" target="_blank">↗ LinkedIn</a>
+            <a href="https://scholar.google.com/citations?user=rph8zrYAAAAJ&hl=en" target="_blank">↗ Google Scholar</a>
+            <a href="mailto:info@subashsigdel.com.np">↗ Email</a>
+            <a href="images/newcv0.pdf" target="_blank">↗ CV</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Papers -->
+  <section id="papers">
+    <div class="wrap">
+      <p class="section-label">Publications</p>
+      <div class="paper">
+        <p class="paper-title">Segment Anything but Farms: Comparing Segmentation Paradigms for Rural UAV Captured Ultra-High-Resolution Imagery</p>
+        <p class="paper-authors">
+          Snehalraj Chugh, Dharmendra Singh Chaudhary, <span class="me">Subash Sigdel</span>, Shubham Thapa, Lalit BC, Nishan Ghimire, Bipendra Basnyat, Nirmalya Roy
+        </p>
+        <p class="paper-venue">WACV 2026 Workshop · GeoCV</p>
+        <div class="paper-links">
+          <a href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">PDF</a>
+          <a href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">CVF Open Access</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- Experience -->
-  <section id="experience" class="bg-gray-50 py-10 p-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Experience</h2>
-      <div class="space-y-4">
-        <div class="border border-gray-200 p-4 rounded-lg shadow-sm">
-          <h3 class="font-semibold">AI Engineer Intern @ Telemus AI</h3>
-          <p class="text-sm text-gray-600">jan 2023 – Apr 2023</p>
-          <ul class="list-disc list-inside text-gray-700">
-            <li>Crowd estimation and analytics , Soccer analytics using 
-              perception transformation </li>
-            <li>Worked on NLP ( Conversational bot for virtual conversation practice )</li>
-            <li>Worked with Deep Q learning (Reinforcement Learning)</li>
+  <section id="experience">
+    <div class="wrap">
+      <p class="section-label">Experience</p>
+      <div class="exp-item">
+        <div class="exp-date">Jan 2023 –<br>Apr 2023</div>
+        <div>
+          <p class="exp-role">AI Engineer Intern</p>
+          <p class="exp-org">Telemus AI</p>
+          <ul class="exp-bullets">
+            <li>Crowd estimation &amp; analytics; soccer analytics via perspective transformation</li>
+            <li>NLP conversational bot for virtual conversation practice</li>
+            <li>Deep Q-Network reinforcement learning experiments</li>
           </ul>
         </div>
-        <div class="border border-gray-200 p-4 rounded-lg shadow-sm">
-            <h3 class="font-semibold">Research and Development Intern @ Robotics Association Of Nepal</h3>
-            <p class="text-sm text-gray-600">May 2022 – Nov 2022</p>
-            <ul class="list-disc list-inside text-gray-700">
-              <li>Researched on MTCNN & Siamese Neural Network</li>
-              <li>Volunteered workshop about robotics and AI at schools</li>
-              <li> Volunteered UNDP program, CNIYEF event and more</li>
-            </ul>
-          </div>
+      </div>
+      <div class="exp-item">
+        <div class="exp-date">May 2022 –<br>Nov 2022</div>
+        <div>
+          <p class="exp-role">Research &amp; Development Intern</p>
+          <p class="exp-org">Robotics Association of Nepal</p>
+          <ul class="exp-bullets">
+            <li>Researched MTCNN &amp; Siamese Neural Networks for face recognition</li>
+            <li>Conducted robotics &amp; AI workshops at schools</li>
+            <li>Volunteered at UNDP programs and CNIYEF events</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- Research Papers -->
-  <section id="papers" class="py-10 p-6">
-    <div class="max-w-4xl mx-auto">
-      <h2 class="text-2xl font-semibold mb-6">Research Papers</h2>
-      <ul class="list-disc list-inside space-y-4">
-        <li>
-          <strong>Classification Techniques in Machine Learning</strong>, Article, 2022
-          <br />
-          <a href="#" class="text-blue-600 hover:underline">Read Paper</a>
-        </li>
-      </ul>
-    </div>
-  </section>
-<!-- Projects -->
-<section id="projects" class="bg-gray-50 py-10 p-6">
-  <h3 class="text-xl font-bold mb-4">Personal Projects</h3>
-  <div class="w-full relative">
-    <div class="swiper centered-slide-carousel swiper-container relative">
-      <div class="swiper-wrapper items-stretch">
+  <!-- Projects -->
+  <section id="projects">
+    <div class="wrap">
+      <p class="section-label">Projects</p>
 
-        <!-- Traffic Prediction -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Traffic Prediction and Signal Control</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🌍 Real-world Impact</span>
-                  <span class="text-xs bg-yellow-100 text-yellow-800 px-2 py-1 rounded-full">🎓 University Project</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  Designed a smart traffic management system leveraging real-time data and AI models to predict congestion and dynamically optimize signal timings to reduce waiting time and emissions.
-                </p>
-                <p class="text-sm text-gray-500">Tech used: Python, OpenCV, Flask, TensorFlow</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a> ||
-                <a href="#" class="text-blue-600 hover:underline inline-block">Read Paper</a>
-              </div>
+      <p class="project-group-label">Personal</p>
+      <div class="project-list">
+
+        <!-- InMoov -->
+        <div class="project-card">
+          <div class="project-card-img inmoov-gallery">
+            <img id="inmoov-img" src="images/robo_one.jpeg" alt="InMoov Robot" />
+            <div class="gallery-controls">
+              <button class="gallery-btn" onclick="inmoovNav(-1)">&#8592;</button>
+              <span class="gallery-counter" id="inmoov-counter">1 / 4</span>
+              <button class="gallery-btn" onclick="inmoovNav(1)">&#8594;</button>
             </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <img src="images/traffic.jpeg" alt="Traffic Prediction" class="rounded-lg shadow w-full h-auto object-contain max-h-64" />
+          </div>
+          <div class="project-card-body">
+            <p class="project-card-title">InMoov — Open-Source Humanoid Robot</p>
+            <span class="tag ongoing">🔬 Ongoing</span>
+            <p class="project-card-desc">Building and programming the InMoov humanoid robot as a research
+              platform. Currently the robot accepts natural language voice commands and executes a set of
+               physical actions. The ongoing research direction extends this further — integrating Vision
+               Language Models so the robot can semantically understand its visual environment and physically
+                point toward named objects on demand, e.g., <em>"Where is the door?"</em> — a step toward
+                 grounded spatial intelligence in embodied systems.</p>
+            <p class="project-card-team">Subash Sigdel, Ram Tamang</p>
+            <p class="project-card-mentor">Mentored by <a href="https://en.wikipedia.org/wiki/Muni_Sakya" target="_blank">Muni Bahadur Shakya</a> — Nepal's first computer scientist &amp; pioneer</p>
+            <p class="project-card-tech">Python · ROS · OpenCV · Arduino · 3D Printing · Sensors · LLMs · VLMs</p>
+            <div class="project-card-links">
+              <a href="#" target="_blank">↗ GitHub</a>
             </div>
           </div>
         </div>
 
-        <!-- Virtual Keyboard -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Virtual Keyboard</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded-full">🎮 Fun Project</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  Built a virtual keyboard using hand gesture recognition powered by MediaPipe and OpenCV, enabling contactless text entry via webcam.
-                </p>
-                <p class="text-sm text-gray-500">Tech used: Python, OpenCV, MediaPipe</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a>
-              </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <video src="images/KEYBOARD.mp4" class="rounded-lg shadow w-full h-auto object-contain max-h-64" controls autoplay muted loop></video>
-            </div>
+        <!-- Traffic -->
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="images/traffic.jpeg" alt="Traffic Prediction"
+              onerror="this.parentElement.className='project-card-img placeholder'; this.parentElement.innerHTML='<span>no image yet</span>'" />
           </div>
-        </div>
-
-        <!-- LED Control -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">LED Control Using Hand - MediaPipe</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-pink-100 text-pink-800 px-2 py-1 rounded-full">🎮 Fun Project</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  A gesture-based LED control system that uses MediaPipe hand tracking to toggle and adjust LED states without physical contact, promoting hygienic interaction.
-                </p>
-                <p class="text-sm text-gray-500">Tech used: Arduino, Python, MediaPipe</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a>
-              </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <video src="images/ledController.mp4" class="rounded-lg shadow w-full h-auto object-contain max-h-64" controls autoplay muted loop></video>
+          <div class="project-card-body">
+            <p class="project-card-title">Traffic Prediction &amp; Signal Control</p>
+            <span class="tag">University Project</span>
+            <p class="project-card-desc">Smart traffic management system using real-time data and AI to predict congestion and dynamically optimize signal timings — reducing wait times and emissions.</p>
+            <p class="project-card-tech">Python · OpenCV · Flask · TensorFlow</p>
+            <div class="project-card-links">
+              <a href="#" target="_blank">↗ GitHub</a>
+              <a href="#" target="_blank">↗ Paper</a>
             </div>
           </div>
         </div>
 
       </div>
-      <div class="swiper-pagination"></div>
-    </div>
-  </div>
 
-  <h3 class="text-xl font-bold mt-12 mb-4">Group Projects</h3>
-  <div class="w-full relative">
-    <div class="swiper centered-slide-carousel swiper-container relative">
-      <div class="swiper-wrapper items-stretch">
+      <p class="project-group-label">Group</p>
+      <div class="project-list">
+
+        <!-- PadhaiSathi -->
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="images/hack2winner.jpg" alt="PadhaiSathi"
+              onerror="this.parentElement.className='project-card-img placeholder'; this.parentElement.innerHTML='<span>no image yet</span>'" />
+          </div>
+          <div class="project-card-body">
+            <p class="project-card-title">PadhaiSathi — For Visually Impaired Students</p>
+            <span class="tag winner">🏆 Hackathon Winner</span>
+            <p class="project-card-desc">AI-powered assistive webapp helping visually impaired students read and navigate content through audio feedback using OCR and text-to-speech.</p>
+            <p class="project-card-team">Subash Sigdel, Zidan Rai, Arik Rai, Nima Tamang, Jiten Rai</p>
+            <p class="project-card-tech">Python · OCR · gTTS</p>
+            <div class="project-card-links">
+              <a href="#" target="_blank">↗ GitHub</a>
+              <a href="#" target="_blank">↗ Paper</a>
+            </div>
+          </div>
+        </div>
 
         <!-- Park Me -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Park Me</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🏆 Hackathon-Winner</span>
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🌍 Real-world Impact</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  Created a smart parking system that helps users locate the nearest available parking spot using webapp interface.
-                </p>
-                <p class="text-sm text-gray-500 mb-1">Tech used: django,html,css</p>
-                <p class="text-sm text-gray-600">👥 Team Members: Subash sigdel, Ram Tamang, Nischal Tamang, Sadhana Sapkota</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a> ||
-                <a href="#" class="text-blue-600 hover:underline inline-block">View Live</a>
-              </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <img src="images/hack1winner.png" alt="Park Me" class="rounded-lg shadow w-full h-auto object-contain max-h-64" />
-            </div>
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="images/hack1winner.png" alt="Park Me"
+              onerror="this.parentElement.className='project-card-img placeholder'; this.parentElement.innerHTML='<span>no image yet</span>'" />
           </div>
-        </div>
-
-        <!-- Padhai-Sathi -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">PadhaiSathi - For Visually Impaired Students</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🏆 Hackathon-Winner</span>
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🌍 Real-world Impact</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  Designed an AI-powered assistive webapp to help visually impaired students read and navigate content through audio feedback.
-                </p>
-                <p class="text-sm text-gray-500 mb-1">Tech used: Python, OCR, gTTS</p>
-                <p class="text-sm text-gray-600">👥 Team Members: Subash Sigdel, Zidan Rai, Arik Rai, Nima Tamang, Jiten Rai</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a> ||
-                <a href="#" class="text-blue-600 hover:underline inline-block">Read Paper</a>
-              </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <img src="images/hack2winner.jpg" alt="Padhai Sathi" class="rounded-lg shadow w-full h-auto object-contain max-h-64" />
+          <div class="project-card-body">
+            <p class="project-card-title">Park Me</p>
+            <span class="tag winner">🏆 Hackathon Winner</span>
+            <p class="project-card-desc">Smart parking system that helps users locate the nearest available parking spot in real time via a webapp interface.</p>
+            <p class="project-card-team">Subash Sigdel, Ram Tamang, Nischal Tamang, Sadhana Sapkota</p>
+            <p class="project-card-tech">Django · HTML · CSS</p>
+            <div class="project-card-links">
+              <a href="#" target="_blank">↗ GitHub</a>
+              <a href="#" target="_blank">↗ Live</a>
             </div>
           </div>
         </div>
 
         <!-- Advance Agro -->
-        <div class="swiper-slide h-full">
-          <div class="flex flex-col md:flex-row border border-gray-200 p-6 rounded-lg shadow-sm h-full min-h-[500px]">
-            <div class="md:w-1/2 md:pr-4 flex flex-col justify-between">
-              <div>
-                <h4 class="text-lg font-semibold mb-2">Advance Agro</h4>
-                <div class="flex flex-wrap gap-2 mb-2">
-                  <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full">🏆 Hackathon</span>
-                  <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full">🌍 Real-world Impact</span>
-                </div>
-                <p class="text-gray-700 mb-2">
-                  Built a smart agriculture assistant using soil sensors and weather APIs to recommend real-time irrigation and fertilizer plans.
-                </p>
-                <p class="text-sm text-gray-500 mb-1">Tech used: Arduino, Sensors, Flask, ML</p>
-                <p class="text-sm text-gray-600">👥 Team Members: Subash Sigdel, Ram Tamang, Abhay Mandal</p>
-              </div>
-              <div class="mt-2">
-                <a href="#" class="text-blue-600 hover:underline inline-block">View on GitHub</a> ||
-                <a href="#" class="text-blue-600 hover:underline inline-block">View live</a>
-              </div>
-            </div>
-            <div class="md:w-1/2 flex justify-center items-center mt-4 md:mt-0">
-              <img src="images/advance.jpeg" alt="Advance Agro" class="rounded-lg shadow w-full h-auto object-contain max-h-64" />
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="images/advance.jpeg" alt="Advance Agro"
+              onerror="this.parentElement.className='project-card-img placeholder'; this.parentElement.innerHTML='<span>no image yet</span>'" />
+          </div>
+          <div class="project-card-body">
+            <p class="project-card-title">Advance Agro</p>
+            <span class="tag">Hackathon</span>
+            <p class="project-card-desc">Smart agriculture assistant using soil sensors and weather APIs to recommend real-time irrigation and fertilizer plans for farmers.</p>
+            <p class="project-card-team">Subash Sigdel, Ram Tamang, Abhay Mandal</p>
+            <p class="project-card-tech">Arduino · Sensors · Flask · ML</p>
+            <div class="project-card-links">
+              <a href="#" target="_blank">↗ GitHub</a>
+              <a href="#" target="_blank">↗ Live</a>
             </div>
           </div>
         </div>
 
       </div>
-      <div class="swiper-pagination"></div>
     </div>
-  </div>
-</section>
+  </section>
 
-
-
-  
-          
-    </section>
   <!-- Footer -->
-  <footer id="contact" class="text-center text-sm text-gray-500 py-6">
-    <p>&copy; Made by subash sigdel</p>
-    <div class="space-x-4 mt-2">
-      <a href="https://github.com/subashsigdel" class="hover:text-gray-700">GitHub</a>
-      <a href="https://www.linkedin.com/in/subash5/" class="hover:text-gray-700">LinkedIn</a>
-      <a href="#" class="hover:text-gray-700">Google Scholar</a>
+  <footer>
+    <div class="wrap">
+      <p>© subash sigdel &nbsp;·&nbsp; kathmandu, nepal</p>
     </div>
   </footer>
-  <script>feather.replace()</script>
-  <!--JAVASCRIPT CODE-->
-<script>
-    var swiper = new Swiper(".centered-slide-carousel", {
-     centeredSlides: true,
-     paginationClickable: true,
-     loop: true,
-     spaceBetween: 30,
-     slideToClickedSlide: true,
-     pagination: {
-       el: ".centered-slide-carousel .swiper-pagination",
-       clickable: true,
-     },
-     breakpoints: {
-       1920: {
-         slidesPerView: 4,
-         spaceBetween: 30
-       },
-       1028: {
-         slidesPerView: 2,
-         spaceBetween: 10
-       },
-       990: {
-         slidesPerView: 1,
-         spaceBetween: 0
-       }
-     }
-    });
-    </script>
+
+  <script>
+    const inmoovImages = [
+      'images/robo_one.jpeg',
+      'images/robo_two.jpeg',
+      'images/robo_three.jpeg',
+      'images/robo_four.jpeg',
+    ];
+    let inmoovIdx = 0;
+
+    function inmoovNav(dir) {
+      inmoovIdx = (inmoovIdx + dir + inmoovImages.length) % inmoovImages.length;
+      const img = document.getElementById('inmoov-img');
+      img.classList.add('fade');
+      setTimeout(() => {
+        img.src = inmoovImages[inmoovIdx];
+        img.onload = () => img.classList.remove('fade');
+        img.onerror = () => img.classList.remove('fade');
+      }, 200);
+      document.getElementById('inmoov-counter').textContent =
+        (inmoovIdx + 1) + ' / ' + inmoovImages.length;
+    }
+  </script>
 </body>
 </html>
