@@ -4,520 +4,131 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Subash Sigdel</title>
+  <link rel="icon" type="image/jpeg" href="images/subash.jpeg" />
   <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=IBM+Plex+Mono:wght@300;400&family=Source+Sans+3:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
     :root {
-      --ink: #0f0f0f;
-      --muted: #444;
-      --faint: #e4e0da;
-      --paper: #f9f7f4;
-      --white: #ffffff;
-      --accent: #b85c3a;
-      --link: #1a4a7a;
+      --ink: #0f0f0f; --muted: #444; --faint: #e4e0da;
+      --paper: #f9f7f4; --white: #ffffff; --accent: #b85c3a; --link: #1a4a7a;
     }
-
     html { scroll-behavior: smooth; }
-
-    body {
-      background: var(--paper);
-      color: var(--ink);
-      font-family: 'Source Sans 3', sans-serif;
-      font-size: 17px;
-      line-height: 1.7;
-    }
-
-    /* ── Scrollbar ── */
+    body { background: var(--paper); color: var(--ink); font-family: 'Source Sans 3', sans-serif; font-size: 17px; line-height: 1.7; }
     ::-webkit-scrollbar { width: 5px; }
     ::-webkit-scrollbar-track { background: var(--paper); }
     ::-webkit-scrollbar-thumb { background: var(--faint); border-radius: 999px; }
     ::-webkit-scrollbar-thumb:hover { background: #ccc; }
-
-    /* ── Nav ── */
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--paper);
-      border-bottom: 1px solid var(--faint);
-      padding: 1rem 0;
-    }
-
-    nav .wrap {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav .name {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.75rem;
-      font-weight: 400;
-      letter-spacing: 0.07em;
-      color: var(--muted);
-    }
-
-    nav ul {
-      display: flex;
-      gap: 2rem;
-      list-style: none;
-    }
-
-    nav ul a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.05em;
-      color: var(--muted);
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
+    nav { position: sticky; top: 0; z-index: 100; background: var(--paper); border-bottom: 1px solid var(--faint); padding: 1rem 0; }
+    nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+    nav .name { font-family: 'IBM Plex Mono', monospace; font-size: 0.75rem; font-weight: 400; letter-spacing: 0.07em; color: var(--muted); }
+    nav ul { display: flex; gap: 2rem; list-style: none; }
+    nav ul a { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.05em; color: var(--muted); text-decoration: none; transition: color 0.2s; }
     nav ul a:hover { color: var(--ink); }
-
-    .wrap {
-      max-width: 860px;
-      margin: 0 auto;
-      padding: 0 2rem;
-    }
-
-    /* ── Hero ── */
-    #about {
-      padding: 6rem 0 5rem;
-      border-bottom: 1px solid var(--faint);
-    }
-
-    .hero-inner {
-      display: flex;
-      align-items: flex-start;
-      gap: 3.5rem;
-      animation: fadeUp 0.5s ease both;
-    }
-
-    .hero-photo {
-      flex-shrink: 0;
-      width: 245px;
-      height: 250px;
-      border-radius: 50%;
-      border: 4px solid var(--faint);
-      overflow: hidden;
-      background: var(--faint);
-      box-shadow: 0 4px 20px rgba(0,0,0,0.10);
-    }
-
-    .hero-photo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    .hero-text h1 {
-      font-family: 'Lora', Georgia, serif;
-      font-size: 2.4rem;
-      font-weight: 500;
-      letter-spacing: -0.01em;
-      line-height: 1.2;
-      margin-bottom: 0.3rem;
-      color: var(--ink);
-    }
-
-    .hero-text .tagline {
-      font-family: 'Lora', serif;
-      font-style: italic;
-      color: var(--muted);
-      font-size: 1rem;
-      margin-bottom: 1.6rem;
-    }
-
-    .hero-text .bio {
-      color: #222;
-      font-size: 0.98rem;
-      max-width: 520px;
-      margin-bottom: 2rem;
-      font-weight: 300;
-      line-height: 1.75;
-    }
-
-    .social-row {
-      display: flex;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .social-row a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.7rem;
-      letter-spacing: 0.04em;
-      color: var(--link);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      padding-bottom: 1px;
-      transition: border-color 0.2s;
-    }
-
+    .wrap { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    #about { padding: 6rem 0 5rem; border-bottom: 1px solid var(--faint); }
+    .hero-inner { display: flex; align-items: flex-start; gap: 3.5rem; animation: fadeUp 0.5s ease both; }
+    .hero-photo { flex-shrink: 0; width: 245px; height: 250px; border-radius: 50%; border: 4px solid var(--faint); overflow: hidden; background: var(--faint); box-shadow: 0 4px 20px rgba(0,0,0,0.10); }
+    .hero-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .hero-text h1 { font-family: 'Lora', Georgia, serif; font-size: 2.4rem; font-weight: 500; letter-spacing: -0.01em; line-height: 1.2; margin-bottom: 0.3rem; color: var(--ink); }
+    .hero-text .tagline { font-family: 'Lora', serif; font-style: italic; color: var(--muted); font-size: 1rem; margin-bottom: 1.6rem; }
+    .hero-text .bio { color: #222; font-size: 0.98rem; max-width: 520px; margin-bottom: 2rem; font-weight: 300; line-height: 1.75;  text-align: justify;max-width: 65ch; }
+    .social-row { display: flex; gap: 1.5rem; flex-wrap: wrap; }
+    .social-row a { font-family: 'IBM Plex Mono', monospace; font-size: 0.7rem; letter-spacing: 0.04em; color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; padding-bottom: 1px; transition: border-color 0.2s; }
     .social-row a:hover { border-bottom-color: var(--link); }
-
-    /* ── Sections ── */
-    section {
-      padding: 4rem 0;
-      border-bottom: 1px solid var(--faint);
-    }
-
-    .section-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 2.5rem;
-    }
-
-    /* ── Papers ── */
+    section { padding: 4rem 0; border-bottom: 1px solid var(--faint); }
+    .section-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--muted); margin-bottom: 2.5rem; }
     .paper { margin-bottom: 2.5rem; }
-
-    .paper-title {
-      font-family: 'Lora', serif;
-      font-size: 1.05rem;
-      font-weight: 500;
-      line-height: 1.5;
-      margin-bottom: 0.3rem;
-      color: var(--ink);
-    }
-
-    .paper-authors {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin-bottom: 0.2rem;
-      font-style: italic;
-      font-weight: 300;
-    }
-
-    .paper-authors .me {
-      font-style: normal;
-      font-weight: 500;
-      color: #1a1a1a;
-    }
-
-    .paper-venue {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.66rem;
-      letter-spacing: 0.04em;
-      color: var(--accent);
-      margin-bottom: 0.6rem;
-    }
-
+    .paper-title { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 500; line-height: 1.5; margin-bottom: 0.3rem; color: var(--ink); }
+    .paper-authors { font-size: 0.88rem; color: var(--muted); margin-bottom: 0.2rem; font-style: italic; font-weight: 300; }
+    .paper-authors .me { font-style: normal; font-weight: 500; color: #1a1a1a; }
+    .paper-venue { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.04em; color: var(--accent); margin-bottom: 0.6rem; }
     .paper-links { display: flex; gap: 1.2rem; }
-
-    .paper-links a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--link);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      border-bottom: 1px solid var(--faint);
-      transition: border-color 0.2s;
-    }
-
+    .paper-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--link); text-decoration: none; letter-spacing: 0.03em; border-bottom: 1px solid var(--faint); transition: border-color 0.2s; }
     .paper-links a:hover { border-bottom-color: var(--link); }
-
-    /* ── Experience ── */
-    .exp-item {
-      display: grid;
-      grid-template-columns: 130px 1fr;
-      gap: 0 2.5rem;
-      margin-bottom: 2.5rem;
-    }
-
-    .exp-date {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.68rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-      padding-top: 0.25rem;
-      line-height: 1.6;
-    }
-
-    .exp-role {
-      font-family: 'Lora', serif;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 0.1rem;
-      color: var(--ink);
-    }
-
-    .exp-org {
-      font-size: 0.88rem;
-      color: var(--muted);
-      font-style: italic;
-      margin-bottom: 0.6rem;
-    }
-
+    /* Standard exp item */
+    .exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 0 2.5rem; margin-bottom: 2.5rem; }
+    .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.03em; padding-top: 0.25rem; line-height: 1.6; }
+    .exp-role { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; margin-bottom: 0.1rem; color: var(--ink); }
+    .exp-org { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 0.6rem; }
     .exp-bullets { list-style: none; padding: 0; }
-
-    .exp-bullets li {
-      font-size: 0.9rem;
-      color: #222;
-      padding-left: 1.2rem;
-      position: relative;
-      margin-bottom: 0.2rem;
-      font-weight: 300;
-    }
-
-    .exp-bullets li::before {
-      content: "–";
-      position: absolute;
-      left: 0;
-      color: #aaa;
-    }
-
-    /* ── Projects ── */
-    .project-group-label {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.63rem;
-      letter-spacing: 0.13em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
-      margin-top: 2.8rem;
-    }
-
+    .exp-bullets li { font-size: 0.9rem; color: #222; padding-left: 1.2rem; position: relative; margin-bottom: 0.2rem; font-weight: 300; }
+    .exp-bullets li::before { content: "–"; position: absolute; left: 0; color: #aaa; }
+    /* Org block with sub-roles */
+    .exp-org-block { display: grid; grid-template-columns: 130px 1fr; gap: 0 2.5rem; margin-bottom: 2.8rem; }
+    .exp-org-block > .exp-date { padding-top: 0.3rem; }
+    .exp-org-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid var(--faint); }
+    .exp-org-logo { width: 36px; height: 36px; border-radius: 6px; background: var(--faint); flex-shrink: 0; overflow: hidden; border: 1px solid #dedad4; display: flex; align-items: center; justify-content: center; }
+    .exp-org-logo img { width: 100%; height: 100%; object-fit: cover; }
+    .exp-org-logo-placeholder { font-family: 'IBM Plex Mono', monospace; font-size: 0.55rem; font-weight: 400; color: var(--muted); letter-spacing: 0.02em; text-align: center; line-height: 1.2; padding: 2px; }
+    .exp-org-title { font-family: 'Lora', serif; font-size: 1.05rem; font-weight: 500; color: var(--ink); line-height: 1.3; }
+    .exp-org-meta { font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem; color: var(--muted); letter-spacing: 0.04em; margin-top: 0.1rem; }
+    /* Sub-roles timeline */
+    .exp-sub-roles { position: relative; padding-left: 1.4rem; }
+    .exp-sub-roles::before { content: ''; position: absolute; left: 5px; top: 6px; bottom: 6px; width: 1px; background: var(--faint); }
+    .exp-sub-role { position: relative; margin-bottom: 1.6rem; }
+    .exp-sub-role:last-child { margin-bottom: 0; }
+    .exp-sub-role::before { content: ''; position: absolute; left: -1.07rem; top: 0.48rem; width: 7px; height: 7px; border-radius: 50%; background: var(--paper); border: 1.5px solid #b0aba4; }
+    .exp-sub-role-header { display: flex; align-items: baseline; gap: 0.8rem; flex-wrap: wrap; margin-bottom: 0.15rem; }
+    .exp-sub-role-title { font-family: 'Lora', serif; font-size: 0.95rem; font-weight: 500; color: var(--ink); }
+    .exp-sub-role-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem; color: var(--muted); letter-spacing: 0.03em; }
+    .exp-sub-role-bullets { list-style: none; padding: 0; margin-top: 0.35rem; }
+    .exp-sub-role-bullets li { font-size: 0.87rem; color: #222; padding-left: 1.2rem; position: relative; margin-bottom: 0.2rem; font-weight: 300; line-height: 1.6; }
+    .exp-sub-role-bullets li::before { content: "–"; position: absolute; left: 0; color: #aaa; }
+    /* Attachment chip */
+    .exp-sub-role-attachment { display: inline-flex; align-items: center; gap: 0.55rem; margin-top: 0.5rem; background: var(--white); border: 1px solid var(--faint); border-radius: 4px; padding: 0.35rem 0.65rem; text-decoration: none; transition: border-color 0.2s, box-shadow 0.2s; }
+    .exp-sub-role-attachment:hover { border-color: #c4c0ba; box-shadow: 0 1px 6px rgba(0,0,0,0.07); }
+    .exp-sub-role-attachment-thumb { width: 30px; height: 30px; border-radius: 3px; background: var(--faint); overflow: hidden; flex-shrink: 0; }
+    .exp-sub-role-attachment-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .exp-sub-role-attachment-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.64rem; color: var(--link); letter-spacing: 0.03em; line-height: 1.35; }
+    /* Projects */
+    .project-group-label { font-family: 'IBM Plex Mono', monospace; font-size: 0.63rem; letter-spacing: 0.13em; text-transform: uppercase; color: var(--muted); margin-bottom: 1.2rem; margin-top: 2.8rem; }
     .project-group-label:first-of-type { margin-top: 0; }
-
-    .project-list {
-      display: flex;
-      flex-direction: column;
-      gap: 1.1rem;
-    }
-
-    .project-card {
-      background: var(--white);
-      border: 1px solid var(--faint);
-      border-radius: 5px;
-      display: flex;
-      flex-direction: row;
-      overflow: hidden;
-      transition: border-color 0.2s, box-shadow 0.2s;
-      min-height: 168px;
-    }
-
-    .project-card:hover {
-      border-color: #c4c0ba;
-      box-shadow: 0 2px 16px rgba(0,0,0,0.07);
-    }
-
-    .project-card-img {
-      width: 200px;
-      flex-shrink: 0;
-      overflow: hidden;
-      background: #ede9e3;
-      position: relative;
-    }
-
-    .project-card-img img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: transform 0.4s ease;
-    }
-
-    .project-card:hover .project-card-img img {
-      transform: scale(1.04);
-    }
-
-    .project-card-img.placeholder {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: repeating-linear-gradient(
-        45deg,
-        #ede9e3,
-        #ede9e3 6px,
-        #e6e1db 6px,
-        #e6e1db 12px
-      );
-    }
-
-    .project-card-img.placeholder span {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.58rem;
-      color: #b0a898;
-      letter-spacing: 0.05em;
-      background: var(--white);
-      padding: 0.2rem 0.5rem;
-      border-radius: 2px;
-    }
-
-    .project-card-body {
-      padding: 1.4rem 1.7rem;
-      display: flex;
-      flex-direction: column;
-      gap: 0.45rem;
-      flex: 1;
-    }
-
-    .project-card-title {
-      font-family: 'Lora', serif;
-      font-size: 0.98rem;
-      font-weight: 500;
-      color: var(--ink);
-      line-height: 1.35;
-    }
-
-    .tag {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.58rem;
-      letter-spacing: 0.04em;
-      padding: 0.15rem 0.5rem;
-      border-radius: 2px;
-      background: var(--faint);
-      color: var(--muted);
-      display: inline-block;
-      width: fit-content;
-    }
-
+    .project-list { display: flex; flex-direction: column; gap: 1.1rem; }
+    .project-card { background: var(--white); border: 1px solid var(--faint); border-radius: 5px; display: flex; flex-direction: row; overflow: hidden; transition: border-color 0.2s, box-shadow 0.2s; min-height: 168px; }
+    .project-card:hover { border-color: #c4c0ba; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
+    .project-card-img { width: 200px; flex-shrink: 0; overflow: hidden; background: #ede9e3; position: relative; }
+    .project-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform 0.4s ease; }
+    .project-card:hover .project-card-img img { transform: scale(1.04); }
+    .project-card-img.placeholder { display: flex; align-items: center; justify-content: center; background: repeating-linear-gradient(45deg, #ede9e3, #ede9e3 6px, #e6e1db 6px, #e6e1db 12px); }
+    .project-card-img.placeholder span { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; color: #b0a898; letter-spacing: 0.05em; background: var(--white); padding: 0.2rem 0.5rem; border-radius: 2px; }
+    .project-card-body { padding: 1.4rem 1.7rem; display: flex; flex-direction: column; gap: 0.45rem; flex: 1; }
+    .project-card-title { font-family: 'Lora', serif; font-size: 0.98rem; font-weight: 500; color: var(--ink); line-height: 1.35; }
+    .tag { font-family: 'IBM Plex Mono', monospace; font-size: 0.58rem; letter-spacing: 0.04em; padding: 0.15rem 0.5rem; border-radius: 2px; background: var(--faint); color: var(--muted); display: inline-block; width: fit-content; }
     .tag.winner { background: #f5ede4; color: #7a4a1a; }
     .tag.ongoing { background: #e8f0e8; color: #3a6a3a; }
-
-    .project-card-desc {
-      font-size: 0.87rem;
-      color: #222;
-      font-weight: 300;
-      line-height: 1.65;
-      flex: 1;
-    }
-
-    .project-card-team {
-      font-size: 0.79rem;
-      color: var(--muted);
-      font-style: italic;
-    }
-
-    .project-card-tech {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.61rem;
-      color: var(--muted);
-      letter-spacing: 0.03em;
-    }
-
-    .project-card-links {
-      display: flex;
-      gap: 1rem;
-      padding-top: 0.5rem;
-      border-top: 1px solid var(--faint);
-      margin-top: 0.15rem;
-    }
-
-    .project-card-links a {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.65rem;
-      color: var(--link);
-      text-decoration: none;
-      letter-spacing: 0.03em;
-      transition: opacity 0.2s;
-    }
-
+    .project-card-desc { font-size: 0.87rem; color: #222; font-weight: 300; line-height: 1.65; flex: 1; }
+    .project-card-team { font-size: 0.79rem; color: var(--muted); font-style: italic; }
+    .project-card-tech { font-family: 'IBM Plex Mono', monospace; font-size: 0.61rem; color: var(--muted); letter-spacing: 0.03em; }
+    .project-card-links { display: flex; gap: 1rem; padding-top: 0.5rem; border-top: 1px solid var(--faint); margin-top: 0.15rem; }
+    .project-card-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--link); text-decoration: none; letter-spacing: 0.03em; transition: opacity 0.2s; }
     .project-card-links a:hover { opacity: 0.65; }
-
-    /* ── Footer ── */
-    footer {
-      padding: 2.5rem 0;
-      text-align: center;
-    }
-
-    footer p {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.66rem;
-      color: var(--muted);
-      letter-spacing: 0.06em;
-    }
-
-    @keyframes fadeUp {
-      from { opacity: 0; transform: translateY(10px); }
-      to   { opacity: 1; transform: translateY(0); }
-    }
-
+    footer { padding: 2.5rem 0; text-align: center; }
+    footer p { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; color: var(--muted); letter-spacing: 0.06em; }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
     @media (max-width: 620px) {
       .hero-inner { flex-direction: column; gap: 1.8rem; }
       .hero-text h1 { font-size: 1.9rem; }
       .exp-item { grid-template-columns: 1fr; gap: 0.2rem; }
+      .exp-org-block { grid-template-columns: 1fr; gap: 0.4rem; }
       nav ul { gap: 1.2rem; }
       .project-card { flex-direction: column; }
       .project-card-img { width: 100%; height: 160px; }
     }
-
-    /* ── InMoov Gallery ── */
+    /* InMoov Gallery */
     .inmoov-gallery { position: relative; }
-
-    .inmoov-gallery img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      transition: opacity 0.3s ease;
-    }
-
+    .inmoov-gallery img { width: 100%; height: 100%; object-fit: cover; display: block; transition: opacity 0.3s ease; }
     .inmoov-gallery img.fade { opacity: 0; }
-
-    .gallery-controls {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 0.4rem 0.6rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.45));
-    }
-
-    .gallery-btn {
-      background: rgba(255,255,255,0.18);
-      border: 1px solid rgba(255,255,255,0.35);
-      color: #fff;
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      cursor: pointer;
-      font-size: 0.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      transition: background 0.2s;
-      line-height: 1;
-    }
-
+    .gallery-controls { position: absolute; bottom: 0; left: 0; right: 0; display: flex; align-items: center; justify-content: space-between; padding: 0.4rem 0.6rem; background: linear-gradient(transparent, rgba(0,0,0,0.45)); }
+    .gallery-btn { background: rgba(255,255,255,0.18); border: 1px solid rgba(255,255,255,0.35); color: #fff; width: 26px; height: 26px; border-radius: 50%; cursor: pointer; font-size: 0.75rem; display: flex; align-items: center; justify-content: center; transition: background 0.2s; line-height: 1; }
     .gallery-btn:hover { background: rgba(255,255,255,0.32); }
-
-    .gallery-counter {
-      font-family: 'IBM Plex Mono', monospace;
-      font-size: 0.6rem;
-      color: rgba(255,255,255,0.85);
-      letter-spacing: 0.05em;
-    }
-
-    .project-card-mentor {
-      font-size: 0.82rem;
-      color: #2e2e2e;
-      font-style: italic;
-      font-weight: 300;
-      border-left: 2px solid var(--faint);
-      padding-left: 0.7rem;
-    }
-
-    .project-card-mentor a {
-      color: var(--link);
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.2s;
-    }
-
+    .gallery-counter { font-family: 'IBM Plex Mono', monospace; font-size: 0.6rem; color: rgba(255,255,255,0.85); letter-spacing: 0.05em; }
+    .project-card-mentor { font-size: 0.82rem; color: #2e2e2e; font-style: italic; font-weight: 300; border-left: 2px solid var(--faint); padding-left: 0.7rem; }
+    .project-card-mentor a { color: var(--link); text-decoration: none; border-bottom: 1px solid transparent; transition: border-color 0.2s; }
     .project-card-mentor a:hover { border-bottom-color: var(--link); }
   </style>
 </head>
 <body>
 
-  <!-- Nav -->
   <nav>
     <div class="wrap">
       <a href="#" class="name" style="text-decoration:none;">subash sigdel</a>
@@ -529,7 +140,6 @@
     </div>
   </nav>
 
-  <!-- Hero -->
   <section id="about">
     <div class="wrap">
       <div class="hero-inner">
@@ -540,25 +150,25 @@
           <h1>Subash Sigdel</h1>
           <p class="tagline">Researcher &amp; Developer · Reinforcement Learning · Computer Vision</p>
           <p class="bio">
-            I work at the intersection of perception and decision making — building systems that see and act. My long-term research interest is
-            <strong>spatial intelligence</strong>: how machines understand, reason about,
-            and interact with physical space. Currently I am exploring how Vision Language Models can be grounded
-            in physical action, enabling machines to semantically understand their environment and respond to natural language with
-            physical gestures.
+            I want to build systems that can see, understand, and act in the physical world. My research sits at 
+            the intersection of perception and decision-making, with a broad interest in spatial 
+            intelligence —
+             how will machines understand, reason about, and interact with physical space.<br> Currently I am exploring how 
+             Vision Language Models can be grounded
+            in physical action, enabling machines to semantically understand their environment and 
+            respond to natural language with physical gestures.
           </p>
           <div class="social-row">
             <a href="https://github.com/subashsigdel" target="_blank">↗ GitHub</a>
             <a href="https://www.linkedin.com/in/subash5/" target="_blank">↗ LinkedIn</a>
             <a href="https://scholar.google.com/citations?user=rph8zrYAAAAJ&hl=en" target="_blank">↗ Google Scholar</a>
             <a href="mailto:info@subashsigdel.com.np">↗ Email</a>
-            <a href="images/newcv0.pdf" target="_blank">↗ CV</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Papers -->
   <section id="papers">
     <div class="wrap">
       <p class="section-label">Publications</p>
@@ -569,45 +179,93 @@
         </p>
         <p class="paper-venue">WACV 2026 Workshop · GeoCV</p>
         <div class="paper-links">
-          <a href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">PDF</a>
           <a href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">CVF Open Access</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Experience -->
   <section id="experience">
     <div class="wrap">
       <p class="section-label">Experience</p>
+
+      <!-- NAAMII — hierarchical org block -->
+      <div class="exp-org-block">
+        <div class="exp-date">Nov 2025 –<br>Present</div>
+        <div>
+          <div class="exp-org-header">
+            <div class="exp-org-name-block">
+              <p class="exp-org-title">NAAMII</p>
+              <p class="exp-org-meta">NepAl Applied Mathematics and Informatics Institute for Research</p>
+            </div>
+          </div>
+
+          <div class="exp-sub-roles">
+
+            <div class="exp-sub-role">
+              <div class="exp-sub-role-header">
+                <span class="exp-sub-role-title">Research Assistant</span>
+                <span class="exp-sub-role-date">Feb 2026 – Present</span>
+              </div>
+              <ul class="exp-sub-role-bullets">
+                <li>Research Assistant at A² Lab under the supervision of Dr. Bipendra Basnyat</li>
+              </ul>
+            </div>
+
+            <div class="exp-sub-role">
+              <div class="exp-sub-role-header">
+                <span class="exp-sub-role-title">Teaching Assistant</span>
+                <span class="exp-sub-role-date">Jan 2026 · 1 mo</span>
+              </div>
+              <ul class="exp-sub-role-bullets">
+                <li>Teaching Assistant at the Sixth Annual Nepal AI School</li>
+              </ul>
+              <a class="exp-sub-role-attachment" href="images/SixthAISchool_TA.jpeg" target="_blank">
+                <div class="exp-sub-role-attachment-thumb">
+                  <img src="images/SixthAISchool_TA.jpeg" alt="Nepal AI School" onerror="this.style.display='none'" />
+                </div>
+                <span class="exp-sub-role-attachment-label">Sixth Annual Nepal AI School<br>Teaching Assistant</span>
+              </a>
+            </div>
+
+            <div class="exp-sub-role">
+              <div class="exp-sub-role-header">
+                <span class="exp-sub-role-title">Research Intern</span>
+                <span class="exp-sub-role-date">Nov 2025 – Jan 2026 · 3 mos</span>
+              </div>
+              <ul class="exp-sub-role-bullets">
+                <li>Contributed to research on segmentation paradigms for rural UAV-captured imagery</li>
+              </ul>
+              <a class="exp-sub-role-attachment" href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">
+                <div class="exp-sub-role-attachment-thumb">
+                  <img src="images/paper.png" alt="WACV Paper" onerror="this.style.display='none'" />
+                </div>
+                <span class="exp-sub-role-attachment-label">Segment Anything but Farms<br>WACV 2026 Workshop · GeoCV</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
       <div class="exp-item">
         <div class="exp-date">Jan 2023 –<br>Apr 2023</div>
         <div>
           <p class="exp-role">AI Engineer Intern</p>
           <p class="exp-org">Telemus AI</p>
-          <ul class="exp-bullets">
-            <li>Crowd estimation &amp; analytics; soccer analytics via perspective transformation</li>
-            <li>NLP conversational bot for virtual conversation practice</li>
-            <li>Deep Q-Network reinforcement learning experiments</li>
-          </ul>
         </div>
       </div>
+
       <div class="exp-item">
         <div class="exp-date">May 2022 –<br>Nov 2022</div>
         <div>
           <p class="exp-role">Research &amp; Development Intern</p>
           <p class="exp-org">Robotics Association of Nepal</p>
-          <ul class="exp-bullets">
-            <li>Researched MTCNN &amp; Siamese Neural Networks for face recognition</li>
-            <li>Conducted robotics &amp; AI workshops at schools</li>
-            <li>Volunteered at UNDP programs and CNIYEF events</li>
-          </ul>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Projects -->
   <section id="projects">
     <div class="wrap">
       <p class="section-label">Projects</p>
@@ -615,7 +273,6 @@
       <p class="project-group-label">Personal</p>
       <div class="project-list">
 
-        <!-- InMoov -->
         <div class="project-card">
           <div class="project-card-img inmoov-gallery">
             <img id="inmoov-img" src="images/robo_one.jpeg" alt="InMoov Robot" />
@@ -628,12 +285,7 @@
           <div class="project-card-body">
             <p class="project-card-title">InMoov — Open-Source Humanoid Robot</p>
             <span class="tag ongoing">🔬 Ongoing</span>
-            <p class="project-card-desc">Building and programming the InMoov humanoid robot as a research
-              platform. Currently the robot accepts natural language voice commands and executes a set of
-               physical actions. The ongoing research direction extends this further — integrating Vision
-               Language Models so the robot can semantically understand its visual environment and physically
-                point toward named objects on demand, e.g., <em>"Where is the door?"</em> — a step toward
-                 grounded spatial intelligence in embodied systems.</p>
+            <p class="project-card-desc">Building and programming the InMoov humanoid robot as a research platform. Currently the robot accepts natural language voice commands and executes a set of physical actions. The ongoing research direction extends this further — integrating Vision Language Models so the robot can semantically understand its visual environment and physically point toward named objects on demand, e.g., <em>"Where is the door?"</em> — a step toward grounded spatial intelligence in embodied systems.</p>
             <p class="project-card-team">Subash Sigdel, Ram Tamang</p>
             <p class="project-card-mentor">Mentored by <a href="https://en.wikipedia.org/wiki/Muni_Sakya" target="_blank">Muni Bahadur Shakya</a> — Nepal's first computer scientist &amp; pioneer</p>
             <p class="project-card-tech">Python · ROS · OpenCV · Arduino · 3D Printing · Sensors · LLMs · VLMs</p>
@@ -643,7 +295,6 @@
           </div>
         </div>
 
-        <!-- Traffic -->
         <div class="project-card">
           <div class="project-card-img">
             <img src="images/traffic.jpeg" alt="Traffic Prediction"
@@ -666,7 +317,6 @@
       <p class="project-group-label">Group</p>
       <div class="project-list">
 
-        <!-- PadhaiSathi -->
         <div class="project-card">
           <div class="project-card-img">
             <img src="images/hack2winner.jpg" alt="PadhaiSathi"
@@ -685,7 +335,6 @@
           </div>
         </div>
 
-        <!-- Park Me -->
         <div class="project-card">
           <div class="project-card-img">
             <img src="images/hack1winner.png" alt="Park Me"
@@ -704,7 +353,6 @@
           </div>
         </div>
 
-        <!-- Advance Agro -->
         <div class="project-card">
           <div class="project-card-img">
             <img src="images/advance.jpeg" alt="Advance Agro"
@@ -727,7 +375,6 @@
     </div>
   </section>
 
-  <!-- Footer -->
   <footer>
     <div class="wrap">
       <p>© subash sigdel &nbsp;·&nbsp; kathmandu, nepal</p>
@@ -735,14 +382,8 @@
   </footer>
 
   <script>
-    const inmoovImages = [
-      'images/robo_one.jpeg',
-      'images/robo_two.jpeg',
-      'images/robo_three.jpeg',
-      'images/robo_four.jpeg',
-    ];
+    const inmoovImages = ['images/robo_one.jpeg','images/robo_two.jpeg','images/robo_three.jpeg','images/robo_four.jpeg'];
     let inmoovIdx = 0;
-
     function inmoovNav(dir) {
       inmoovIdx = (inmoovIdx + dir + inmoovImages.length) % inmoovImages.length;
       const img = document.getElementById('inmoov-img');
@@ -752,8 +393,7 @@
         img.onload = () => img.classList.remove('fade');
         img.onerror = () => img.classList.remove('fade');
       }, 200);
-      document.getElementById('inmoov-counter').textContent =
-        (inmoovIdx + 1) + ' / ' + inmoovImages.length;
+      document.getElementById('inmoov-counter').textContent = (inmoovIdx + 1) + ' / ' + inmoovImages.length;
     }
   </script>
 </body>
