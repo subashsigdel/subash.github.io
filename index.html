@@ -47,7 +47,7 @@
     .paper-links a:hover { border-bottom-color: var(--link); }
     /* Standard exp item */
     .exp-item { display: grid; grid-template-columns: 130px 1fr; gap: 0 2.5rem; margin-bottom: 2.5rem; }
-    .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.03em; padding-top: 0.25rem; line-height: 1.6; }
+    .exp-date { font-family: 'IBM Plex Mono', monospace; font-size: 0.68rem; color: var(--muted); letter-spacing: 0.03em; padding-top: 0.25rem; line-height: 1.6; white-space: nowrap; }
     .exp-role { font-family: 'Lora', serif; font-size: 1rem; font-weight: 500; margin-bottom: 0.1rem; color: var(--ink); }
     .exp-org { font-size: 0.88rem; color: var(--muted); font-style: italic; margin-bottom: 0.6rem; }
     .exp-bullets { list-style: none; padding: 0; }
@@ -102,6 +102,11 @@
     .project-card-links { display: flex; gap: 1rem; padding-top: 0.5rem; border-top: 1px solid var(--faint); margin-top: 0.15rem; }
     .project-card-links a { font-family: 'IBM Plex Mono', monospace; font-size: 0.65rem; color: var(--link); text-decoration: none; letter-spacing: 0.03em; transition: opacity 0.2s; }
     .project-card-links a:hover { opacity: 0.65; }
+    /* Collapsible sections: only current entries show until expanded */
+    .collapsible:not(.expanded) .past { display: none; }
+    .collapsible:not(.expanded) .exp-sub-role:not(.past) { margin-bottom: 0; }
+    .show-more { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; letter-spacing: 0.04em; color: var(--link); background: none; border: 1px solid var(--faint); border-radius: 3px; padding: 0.35rem 0.8rem; cursor: pointer; transition: border-color 0.2s; }
+    .show-more:hover { border-color: var(--link); }
     footer { padding: 2.5rem 0; text-align: center; }
     footer p { font-family: 'IBM Plex Mono', monospace; font-size: 0.66rem; color: var(--muted); letter-spacing: 0.06em; }
     @keyframes fadeUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -148,7 +153,7 @@
         </div>
         <div class="hero-text">
           <h1>Subash Sigdel</h1>
-          <p class="tagline">Researcher &amp; Developer · Reinforcement Learning · Computer Vision</p>
+          <p class="tagline">Reinforcement Learning · Computer Vision</p>
           <p class="bio">
             I want to build systems that can see, understand, and act in the physical world. My research sits at 
             the intersection of perception and decision-making, with a broad interest in spatial 
@@ -173,6 +178,16 @@
     <div class="wrap">
       <p class="section-label">Publications</p>
       <div class="paper">
+        <p class="paper-title">WiP: DeerSense: Oh Deer, We Know What You Do! Deterrence-Aware Deer Behavior Recognition</p>
+        <p class="paper-authors">
+          Dharmendra Singh Chaudhary, <span class="me">Subash Sigdel</span>, Snehalraj Chugh, Shubham Thapa, Samyam Sapkota, Samuel Dupont, Bipendra Basnyat, Travis Gallo, Nirupam Roy, Anuradha Ravi, Nirmalya Roy
+        </p>
+        <p class="paper-venue">ACM MobiCom 2026</p>
+        <div class="paper-links">
+          <a href="https://doi.org/10.1145/3795866.3844789" target="_blank">DOI: 10.1145/3795866.3844789</a>
+        </div>
+      </div>
+      <div class="paper">
         <p class="paper-title">Segment Anything but Farms: Comparing Segmentation Paradigms for Rural UAV Captured Ultra-High-Resolution Imagery</p>
         <p class="paper-authors">
           Snehalraj Chugh, Dharmendra Singh Chaudhary, <span class="me">Subash Sigdel</span>, Shubham Thapa, Lalit BC, Nishan Ghimire, Bipendra Basnyat, Nirmalya Roy
@@ -180,18 +195,50 @@
         <p class="paper-venue">WACV 2026 Workshop · GeoCV</p>
         <div class="paper-links">
           <a href="https://openaccess.thecvf.com/content/WACV2026W/GeoCV/papers/Chugh_Segment_Anything_but_Farms_Comparing_Segmentation_Paradigms_for_Rural_UAV_WACVW_2026_paper.pdf" target="_blank">CVF Open Access</a>
+          <a href="https://doi.org/10.1109/WACVW68408.2026.00099" target="_blank">DOI: 10.1109/WACVW68408.2026.00099</a>
         </div>
       </div>
     </div>
   </section>
 
-  <section id="experience">
+  <section id="education" class="collapsible">
+    <div class="wrap">
+      <p class="section-label">Education</p>
+
+      <div class="exp-item">
+        <div class="exp-date">Oct 2026 – Present</div>
+        <div>
+          <p class="exp-role">Master of Science, Research in Computer and Systems Engineering</p>
+          <p class="exp-org">Technische Universität Ilmenau</p>
+        </div>
+      </div>
+
+      <div class="exp-item past">
+        <div class="exp-date">Dec 2021 – May 2025</div>
+        <div>
+          <p class="exp-role">Bachelor of Information Technology, Computer Science</p>
+          <p class="exp-org">Lincoln University College</p>
+        </div>
+      </div>
+
+      <div class="exp-item past">
+        <div class="exp-date">Aug 2018 – May 2020</div>
+        <div>
+          <p class="exp-role">+2, Computer Science</p>
+          <p class="exp-org">St. Lawrence College</p>
+        </div>
+      </div>
+      <button class="show-more" type="button">show all</button>
+    </div>
+  </section>
+
+  <section id="experience" class="collapsible">
     <div class="wrap">
       <p class="section-label">Experience</p>
 
       <!-- NAAMII — hierarchical org block -->
       <div class="exp-org-block">
-        <div class="exp-date">Nov 2025 –<br>Present</div>
+        <div class="exp-date">Nov 2025 – Present</div>
         <div>
           <div class="exp-org-header">
             <div class="exp-org-name-block">
@@ -212,7 +259,7 @@
               </ul>
             </div>
 
-            <div class="exp-sub-role">
+            <div class="exp-sub-role past">
               <div class="exp-sub-role-header">
                 <span class="exp-sub-role-title">Teaching Assistant</span>
                 <span class="exp-sub-role-date">Jan 2026 · 1 mo</span>
@@ -228,7 +275,7 @@
               </a>
             </div>
 
-            <div class="exp-sub-role">
+            <div class="exp-sub-role past">
               <div class="exp-sub-role-header">
                 <span class="exp-sub-role-title">Research Intern</span>
                 <span class="exp-sub-role-date">Nov 2025 – Jan 2026 · 3 mos</span>
@@ -248,21 +295,22 @@
         </div>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-date">Jan 2023 –<br>Apr 2023</div>
+      <div class="exp-item past">
+        <div class="exp-date">Jan 2023 – Apr 2023</div>
         <div>
           <p class="exp-role">AI Engineer Intern</p>
           <p class="exp-org">Telemus AI</p>
         </div>
       </div>
 
-      <div class="exp-item">
-        <div class="exp-date">May 2022 –<br>Nov 2022</div>
+      <div class="exp-item past">
+        <div class="exp-date">May 2022 – Nov 2022</div>
         <div>
           <p class="exp-role">Research &amp; Development Intern</p>
           <p class="exp-org">Robotics Association of Nepal</p>
         </div>
       </div>
+      <button class="show-more" type="button">show all</button>
     </div>
   </section>
 
@@ -289,8 +337,21 @@
             <p class="project-card-team">Subash Sigdel, Ram Tamang</p>
             <p class="project-card-mentor">Mentored by <a href="https://en.wikipedia.org/wiki/Muni_Sakya" target="_blank">Muni Bahadur Shakya</a> — Nepal's first computer scientist &amp; pioneer</p>
             <p class="project-card-tech">Python · ROS · OpenCV · Arduino · 3D Printing · Sensors · LLMs · VLMs</p>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-card-img">
+            <img src="images/rover/rover.jpeg" alt="Person-following rover"
+              onerror="this.parentElement.className='project-card-img placeholder'; this.parentElement.innerHTML='<span>no image yet</span>'" />
+          </div>
+          <div class="project-card-body">
+            <p class="project-card-title">Rover — Person-Following Robot</p>
+            <span class="tag">Personal Project</span>
+            <p class="project-card-desc">A skid-steer rover that finds a person and drives after them, fully offline. A Raspberry Pi 3 runs YOLO11n on a USB webcam feed, estimates distance from the bounding-box width with a calibrated pinhole constant, and turns it into throttle and steering; an ESP32 converts those commands into motor PWM behind a 500 ms watchdog.</p>
+            <p class="project-card-tech">Python · Raspberry Pi · ESP32 · YOLO11n · ONNX · OpenCV</p>
             <div class="project-card-links">
-              <a href="#" target="_blank">↗ GitHub</a>
+              <a href="https://github.com/subashsigdel/Rover" target="_blank">↗ GitHub</a>
             </div>
           </div>
         </div>
@@ -305,10 +366,6 @@
             <span class="tag">University Project</span>
             <p class="project-card-desc">Smart traffic management system using real-time data and AI to predict congestion and dynamically optimize signal timings — reducing wait times and emissions.</p>
             <p class="project-card-tech">Python · OpenCV · Flask · TensorFlow</p>
-            <div class="project-card-links">
-              <a href="#" target="_blank">↗ GitHub</a>
-              <a href="#" target="_blank">↗ Paper</a>
-            </div>
           </div>
         </div>
 
@@ -328,10 +385,6 @@
             <p class="project-card-desc">AI-powered assistive webapp helping visually impaired students read and navigate content through audio feedback using OCR and text-to-speech.</p>
             <p class="project-card-team">Subash Sigdel, Zidan Rai, Arik Rai, Nima Tamang, Jiten Rai</p>
             <p class="project-card-tech">Python · OCR · gTTS</p>
-            <div class="project-card-links">
-              <a href="#" target="_blank">↗ GitHub</a>
-              <a href="#" target="_blank">↗ Paper</a>
-            </div>
           </div>
         </div>
 
@@ -346,10 +399,6 @@
             <p class="project-card-desc">Smart parking system that helps users locate the nearest available parking spot in real time via a webapp interface.</p>
             <p class="project-card-team">Subash Sigdel, Ram Tamang, Nischal Tamang, Sadhana Sapkota</p>
             <p class="project-card-tech">Django · HTML · CSS</p>
-            <div class="project-card-links">
-              <a href="#" target="_blank">↗ GitHub</a>
-              <a href="#" target="_blank">↗ Live</a>
-            </div>
           </div>
         </div>
 
@@ -364,10 +413,6 @@
             <p class="project-card-desc">Smart agriculture assistant using soil sensors and weather APIs to recommend real-time irrigation and fertilizer plans for farmers.</p>
             <p class="project-card-team">Subash Sigdel, Ram Tamang, Abhay Mandal</p>
             <p class="project-card-tech">Arduino · Sensors · Flask · ML</p>
-            <div class="project-card-links">
-              <a href="#" target="_blank">↗ GitHub</a>
-              <a href="#" target="_blank">↗ Live</a>
-            </div>
           </div>
         </div>
 
@@ -382,6 +427,14 @@
   </footer>
 
   <script>
+    document.querySelectorAll('.collapsible').forEach(section => {
+      const btn = section.querySelector('.show-more');
+      const n = section.querySelectorAll('.past').length;
+      const label = () => btn.textContent = section.classList.contains('expanded') ? 'show less ↑' : 'show all (' + n + ' more) ↓';
+      label();
+      btn.addEventListener('click', () => { section.classList.toggle('expanded'); label(); });
+    });
+
     const inmoovImages = ['images/robo_one.jpeg','images/robo_two.jpeg','images/robo_three.jpeg','images/robo_four.jpeg'];
     let inmoovIdx = 0;
     function inmoovNav(dir) {
