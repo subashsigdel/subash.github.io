@@ -1,0 +1,17 @@
+# Private documents: keep locally, never publish (GitHub Pages serves every committed file)
+experience/
+*cv*.pdf
+*CV*.pdf
+*resume*.pdf
+*.docx
+
+# Secrets
+.env
+*.key
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+*.swp
